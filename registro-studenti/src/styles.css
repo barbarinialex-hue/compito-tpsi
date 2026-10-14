@@ -1,0 +1,27 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  background: #f6f8fb;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1100px;
+}
+
+.card {
+  border-radius: 1rem;
+}
+
+.form-control,
+.form-select {
+  border-radius: 0.75rem;
+}
+
+.nav-link.active {
+  font-weight: 600;
+}

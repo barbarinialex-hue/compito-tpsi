@@ -1,0 +1,76 @@
+<section class="py-4">
+  <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-4">
+    <div>
+      <p class="text-uppercase text-muted small fw-semibold mb-1">Elenco</p>
+      <h1 class="mb-0">Studenti iscritti</h1>
+    </div>
+
+    <div class="d-flex gap-2 align-items-center">
+      <label class="form-label mb-0 me-2">Ordina:</label>
+      <select class="form-select" [ngModel]="ordine()" (ngModelChange)="cambiaOrdine($event)">
+        <option value="nome">Nome</option>
+        <option value="media">Media decrescente</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="card border-0 shadow-sm mb-4">
+    <div class="card-body">
+      <label for="filtroClasse" class="form-label">Cerca per classe</label>
+      <input
+        id="filtroClasse"
+        class="form-control"
+        type="text"
+        [ngModel]="filtroClasse()"
+        (ngModelChange)="filtroClasse.set($event)"
+        placeholder="Es. 5A, 5B, 5C"
+      />
+    </div>
+  </div>
+
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <span class="text-muted">Media della classe filtrata: <strong>{{ mediaClasse() }}</strong></span>
+    <a class="btn btn-primary" routerLink="/inserimento">Nuovo studente</a>
+  </div>
+
+  @if (visibili().length) {
+    <div class="table-responsive">
+      <table class="table table-hover align-middle shadow-sm">
+        <thead class="table-light">
+          <tr>
+            <th>Nome</th>
+            <th>Classe</th>
+            <th>Media</th>
+            <th>Azioni</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (studente of visibili(); track studente.id) {
+            <tr>
+              <td>{{ studente.nome }}</td>
+              <td>{{ studente.classe }}</td>
+              <td
+                [class.text-success]="studente.mediaVoti >= 7"
+                [class.text-danger]="studente.mediaVoti < 7"
+              >
+                {{ studente.mediaVoti.toFixed(2) }}
+              </td>
+              <td>
+                <div class="d-flex gap-2">
+                  <a class="btn btn-sm btn-outline-primary" [routerLink]="['/dettaglio', studente.id]">
+                    Dettaglio
+                  </a>
+                  <a class="btn btn-sm btn-outline-secondary" [routerLink]="['/modifica', studente.id]">
+                    Modifica
+                  </a>
+                </div>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  } @else {
+    <div class="alert alert-info">Nessuno studente corrisponde al filtro attuale.</div>
+  }
+</section>

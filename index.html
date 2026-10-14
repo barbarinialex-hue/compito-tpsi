@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Compito TPSI</title>
+    <meta
+      name="description"
+      content="Progetto base realizzato da zero per il compito TPSI."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav">
+        <div class="brand">Compito TPSI</div>
+        <nav class="menu" aria-label="Navigazione principale">
+          <a href="#home">Home</a>
+          <a href="#features">Funzionalità</a>
+          <a href="#about">Chi siamo</a>
+          <a href="#contact">Contatti</a>
+        </nav>
+        <button class="theme-toggle" id="themeToggle" aria-label="Cambia tema">
+          🌙
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section id="home" class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <span class="eyebrow">Progetto completo</span>
+            <h1>Un sito moderno creato da zero.</h1>
+            <p>
+              Questa pagina rappresenta una base solida per un progetto web con
+              struttura pulita, layout responsivo e interazioni semplici ma efficaci.
+            </p>
+            <div class="hero-actions">
+              <a href="#features" class="btn btn-primary">Scopri di più</a>
+              <a href="#contact" class="btn btn-secondary">Contattaci</a>
+            </div>
+            <ul class="stats" aria-label="Statistiche principali">
+              <li><strong>100%</strong><span>da zero</span></li>
+              <li><strong>3</strong><span>sezioni chiave</span></li>
+              <li><strong>1</strong><span>tema dinamico</span></li>
+            </ul>
+          </div>
+
+          <div class="hero-card" aria-label="Anteprima del progetto">
+            <div class="card-top">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+            </div>
+            <div class="mock-window">
+              <div class="mock-header">
+                <span>Dashboard</span>
+                <span id="dateLabel">--</span>
+              </div>
+              <div class="mock-body">
+                <div class="mini-chart">
+                  <span style="height: 35%"></span>
+                  <span style="height: 55%"></span>
+                  <span style="height: 65%"></span>
+                  <span style="height: 85%"></span>
+                  <span style="height: 100%"></span>
+                </div>
+                <div class="mock-list">
+                  <div>
+                    <span class="pill blue">UI</span>
+                    <strong>Responsive</strong>
+                  </div>
+                  <div>
+                    <span class="pill green">JS</span>
+                    <strong>Interattivo</strong>
+                  </div>
+                  <div>
+                    <span class="pill purple">CSS</span>
+                    <strong>Moderno</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="features" class="features section">
+        <div class="container">
+          <div class="section-heading">
+            <span class="eyebrow">Funzionalità</span>
+            <h2>Struttura semplice e professionale</h2>
+          </div>
+          <div class="cards">
+            <article class="card">
+              <h3>Layout pulito</h3>
+              <p>
+                Sezioni ordinate con una visualizzazione chiara e moderna per ogni
+                dispositivo.
+              </p>
+            </article>
+            <article class="card">
+              <h3>Interazioni</h3>
+              <p>
+                Pulsanti, tema dinamico e contenuti aggiornati in tempo reale con
+                JavaScript.
+              </p>
+            </article>
+            <article class="card">
+              <h3>Facile da estendere</h3>
+              <p>
+                La struttura è pronta per diventare un sito più complesso, un
+                portfolio o un progetto web completo.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="about section">
+        <div class="container about-grid">
+          <div>
+            <span class="eyebrow">Chi siamo</span>
+            <h2>Un punto di partenza robusto</h2>
+            <p>
+              Partendo da zero, questo progetto mette a disposizione un template
+              funzionale per creare una pagina web elegante, leggibile e facilmente
+              personalizzabile.
+            </p>
+            <p>
+              È pensato per essere un buon base per attività scolastiche, prove
+              pratiche o dimostrazioni personali.
+            </p>
+          </div>
+          <div class="quote-box">
+            <p>
+              “La semplicità è la massima sofisticazione: una struttura chiara rende
+              ogni progetto più forte.”
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="contact" class="site-footer">
+      <div class="container footer-wrap">
+        <div>
+          <h3>Compito TPSI</h3>
+          <p>Progetto realizzato da zero in HTML, CSS e JavaScript.</p>
+        </div>
+        <form id="contactForm" class="contact-form" novalidate>
+          <label class="sr-only" for="name">Nome</label>
+          <input id="name" name="name" type="text" placeholder="Il tuo nome" />
+          <button type="submit" class="btn btn-primary">Invia</button>
+        </form>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

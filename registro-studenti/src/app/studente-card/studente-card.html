@@ -1,0 +1,21 @@
+@if (studente()) {
+  <article class="card h-100 shadow-sm border-0">
+    <div class="card-body">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h5 class="card-title mb-0">{{ studente().nome }}</h5>
+        <span class="badge text-bg-primary">{{ studente().classe }}</span>
+      </div>
+
+      <p class="card-text mb-3">
+        Media voti:
+        <strong>{{ studente().mediaVoti.toFixed(2) }}</strong>
+      </p>
+
+      @if (azioni()) {
+        <button type="button" class="btn btn-outline-danger btn-sm" (click)="elimina()">
+          Rimuovi
+        </button>
+      }
+    </div>
+  </article>
+}
